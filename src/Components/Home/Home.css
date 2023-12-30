@@ -1,0 +1,246 @@
+:root {
+    --primaryColor: hsl(199, 100%, 33%);
+    --secondaryColor: hsl(187  , 33%, 100%);
+    --gradientColor:linear-gradient(to right , hsl(187, 85%,43%),hsl(199, 100%,33%));
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(201, 33%, 16%);
+    --textColor: hsl(240, 4%, 36%);
+    --whiteColorDeam: hsl(0, 0%, 93%);
+    --greyText: rgb(190, 190, 199);
+    --inputColor: rgb(239, 239, 239);
+    --bodyColor: rgb(240, 240, 246);
+    --cardBg: rgb(225, 225, 235);
+  }
+  .home{
+    /* width: 100%; */
+    /* position: absolute; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+ 
+  }
+  .overlay{
+    position: absolute;
+    height: 80%;
+    width: 100%;
+    mix-blend-mode: hard-light;
+    z-index: 1;
+    background: rgb(47,106, 127);
+    top: 0;
+    bottom: 0;
+    /* border: 1px solid black; */
+
+  }
+  .video{
+    position: absolute;
+    height: 80%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    /* border:  3px solid black; */
+    object-fit: cover;
+    overflow: hidden;
+    
+  }
+  .homeContent{
+    width: 100%;
+    height: max-content;
+    padding: 8rem 1.5rem 3rem  ;
+    display: flex;
+    row-gap: 3rem;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    margin: auto;
+    color: var(--whiteColor);
+    z-index: 100;
+  }
+  .textDiv{
+    padding: 2rem 0 ;
+
+  }
+  .smallText{
+    font-size: 13px;
+    text-transform: uppercase;
+  }
+  .homeTitle{
+    position: relative;
+    font-size: 1.8rem;
+  }
+  .cardDiv{
+    position: relative;
+    padding: 2rem 1rem;
+    background: var(--whiteColor);
+    border-radius: 10px;
+    gap: 1rem;
+
+  }
+  label{ 
+    display: block;
+    color: var(--textColor);
+    font-size: 13px;
+    font-weight: 500;
+
+  }
+  .label_total{
+    justify-content: space-between;
+    align-items: center;
+
+  }
+  .total{
+    color: var(--textColor);
+     font-size: 18px;
+     padding-bottom: 10px;
+  }
+  .input{
+    height: 40px;
+    padding: 0 1rem;
+    background:var(--inputColor) ;
+    border-radius: 3rem;
+
+  }
+  input{
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 13px;
+    font-weight: 500;
+  
+    
+
+  }
+
+  input[placeholder]{
+    font-size: 13px;
+  }
+  input .icon{
+    font-size: 19px;
+    color: var(--primaryColor)!important;
+    margin-left: 10px;
+  }
+.input[type=range]{
+  background: blue;
+}
+.searchOptions{
+  position: absolute;
+  background: var(--gradientColor);
+  width: max-content;
+  bottom: -0.7rem;
+  padding: 15px 1rem;
+  column-gap: .8rem;
+  border-radius:3rem ;
+  left: 50%;
+  transform: translate(-50%);
+  justify-content: center;
+  cursor: pointer;
+}
+.searchOptions:hover{
+  background: var(--primaryColor);
+}
+.searchOptions .icon{
+  font-size: 18px;
+}
+.searchOptions span{
+  font-size: 13px;
+
+}
+.homeFooterIcons{
+  width: 100%;
+  justify-content: space-between;
+}
+.homeFooterIcons .icon{
+  font-size: 20px;
+  margin: 0 5px;
+  font-weight: 600;
+  color: var(--whiteColor);
+
+}
+.homeFooterIcons:hover{
+  color: var(--primaryColor);
+}
+
+
+@media screen and (min-width:500px){
+  .smallText{
+    font-size: 16px;
+
+  }
+  .homeTitle{
+    position: relative;
+     font-size: 2.3rem;
+     width: max-content;
+  }
+  .homeTitle::after{
+    position: absolute;
+    content: '';
+    background: var(--secondaryColor);
+    height: 5px;
+    width: 145px;
+    right: 0px;
+    bottom: 5px;
+    z-index: -1;
+    }
+  
+.cardDiv{
+    grid-template-columns:  repeat(2,1fr) ;
+}
+}
+
+
+  
+
+
+@media screen and (max-width:658px) {
+  .overlay{
+    height: 90vh;
+  }
+  .video{
+    height: 90vh;
+  }
+  
+}
+  
+
+@media screen and (min-width:660px) {
+  .cardDiv{ 
+    padding: 2rem 1rem;
+    grid-template-columns: repeat(3,1fr);
+
+  }
+}
+
+@media screen and (min-width:940px) {
+ .home{
+  height: 70vh;
+ }
+}
+@media screen and (min-width:1240px) {
+  .home{
+   height: 80vh;
+  }
+  .homeContent{
+    padding-left:0;
+    padding-right: 0;
+
+  }
+  .cardDiv{
+    padding:2rem 1rem;
+    grid-template-columns: repeat(3,1fr);
+
+  }
+  .input{
+    margin-bottom: 1rem;
+  }
+  .searchOptions{
+    bottom: -1rem;
+    padding: 8px 1rem;
+    
+  }
+  .searchOptions span{
+    font-size: 17px;
+    
+  }
+}
